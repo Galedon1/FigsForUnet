@@ -11,9 +11,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-path_in = "D:/projekty/FigsForUnet/input/"
+path_in = "C:/Users/Vilem Nedela/Desktop/AI Segmentace/GIT/FigsForUnet/Input/"
 
-path_out = "D:/projekty/FigsForUnet/output/"
+path_out = "C:/Users/Vilem Nedela/Desktop/AI Segmentace/GIT/FigsForUnet/Output/"
 
 koncovky = (
     ".tif",
