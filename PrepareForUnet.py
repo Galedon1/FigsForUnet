@@ -224,18 +224,30 @@ def RewriteFname(fname):
 
 
 flist = os.listdir(path_in)
-
+plt.ioff()
 for file in flist: 
     if not file.endswith(koncovky):
         continue
     im = Image.open(path_in + file)
     im_arr = np.array(im)
     
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(
+        # figsize =np.array(
+        #     im_arr.shape[:-1][::-1])/100
+        )
     ax.imshow(im_arr, cmap = "Grays")
     ax.set_axis_off()
+    # ax.margins(0,0)
+    # ax.xaxis.set_major_locator(plt.NullLocator())
+    # ax.yaxis.set_major_locator(plt.NullLocator())
     
-    fig.savefig(path_out + RewriteFname(file) )
+    fig.tight_layout(pad = 0)
+    fig.savefig(path_out + RewriteFname(file), 
+                bbox_inches='tight',
+                pad_inches = 0
+                )
+    
+plt.ion()
     
 
 
