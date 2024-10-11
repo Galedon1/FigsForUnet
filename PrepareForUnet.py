@@ -3,6 +3,9 @@
 Created on Thu Oct 10 14:52:07 2024
 
 @author: User
+
+Přejmenuje obrázky a zničí metadata tak, aby je přechroustal Unet.
+
 """
 
 import os

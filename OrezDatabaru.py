@@ -3,6 +3,9 @@
 Created on Thu Oct 10 14:55:14 2024
 
 @author: User
+
+Ořízne z dolní části obrázku definovaný počet pixelů.
+
 """
 
 import os
@@ -11,11 +14,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-path_in = "D:/projekty/FigsForUnet/input/"
+path_in = "C:/Users/Vilem Nedela/Desktop/AI Segmentace/GIT/FigsForUnet/Input/"
 
-path_out = "D:/projekty/FigsForUnet/output/"
+path_out = "C:/Users/Vilem Nedela/Desktop/AI Segmentace/GIT/FigsForUnet/Output/"
 
-pixels_to_cut = 80
+pixels_to_cut = 80 # počet pixelů, které se oříznou z dolní části obrázku
 
 # seznam koncovek souborů k přetvoření - soubory s jinou koncovkou budou ignorovány
 koncovky = (

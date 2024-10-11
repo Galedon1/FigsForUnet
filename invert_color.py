@@ -3,6 +3,9 @@
 Created on Fri Oct 11 08:11:03 2024
 
 @author: User
+
+Invertuje barevnou škálu černobílého obrázku (převede na černobílý, pokud je barevný)
+
 """
 
 import os
@@ -11,10 +14,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-path_in = "D:/projekty/FigsForUnet/input/"
+path_in = "C:/Users/Vilem Nedela/Desktop/AI Segmentace/GIT/FigsForUnet/Input/"
 
-path_out = "D:/projekty/FigsForUnet/output/"
-
+path_out = "C:/Users/Vilem Nedela/Desktop/AI Segmentace/GIT/FigsForUnet/Output/"
 
 # seznam koncovek souborů k přetvoření - soubory s jinou koncovkou budou ignorovány
 koncovky = (
