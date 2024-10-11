@@ -15,12 +15,19 @@ path_in = "D:/projekty/FigsForUnet/input/"
 
 path_out = "D:/projekty/FigsForUnet/output/"
 
+# seznam koncovek souborů k přetvoření - soubory s jinou koncovkou budou ignorovány
 koncovky = (
     ".tif",
     ".tiff",
     ".png",
     ".jpg"
     )
+
+
+# seznam souborů pro přetvoření - pokud je list prázdný, tedy jen [], vezmou se všechny soubory
+flist = [
+    # "Častice 10x  laser place H.tif"    
+    ]
 
 # %%
 
@@ -223,7 +230,10 @@ def RewriteFname(fname):
 
 
 
-flist = os.listdir(path_in)
+if len(flist) == 0:
+    flist = os.listdir(path_in)
+
+
 plt.ioff()
 for file in flist: 
     if not file.endswith(koncovky):
@@ -231,15 +241,9 @@ for file in flist:
     im = Image.open(path_in + file)
     im_arr = np.array(im)
     
-    fig, ax = plt.subplots(
-        # figsize =np.array(
-        #     im_arr.shape[:-1][::-1])/100
-        )
+    fig, ax = plt.subplots()
     ax.imshow(im_arr, cmap = "Grays")
     ax.set_axis_off()
-    # ax.margins(0,0)
-    # ax.xaxis.set_major_locator(plt.NullLocator())
-    # ax.yaxis.set_major_locator(plt.NullLocator())
     
     fig.tight_layout(pad = 0)
     fig.savefig(path_out + RewriteFname(file), 
